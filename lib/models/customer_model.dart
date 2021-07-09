@@ -8,12 +8,12 @@ class CustomerModel{
     required this.id
 });
   factory CustomerModel.fromJson(Map<dynamic,dynamic> json){
-    return CustomerModel(name: json['name'], id: json['id']);
+    return CustomerModel(name: json['Name'], id: json['ID'].toString());
   }
   factory CustomerModel.fromRawJson(String str) => CustomerModel.fromJson(json.decode(str));
   String toRawJson() => json.encode(toJson());
   Map<String, dynamic> toJson() => {
-    "id":id,
-    "name":name,
+    "ID":id,
+    "Name":name,
   };
 }
